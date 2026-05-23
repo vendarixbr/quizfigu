@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figurinhas Copa 2026 – Complete seu Álbum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700;800;900&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script async src="js/fbevents.js"></script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1723014578387937');
+    fbq('track','PageView');
+  </script>
+
+  <!-- UTMify -->
+  <script src="js/latest.js" async defer data-utmify-prevent-xcod-sck data-utmify-prevent-subids></script>
+
+  <!-- UTMify Pixel -->
+  <script>
+    window.pixelId = "6916b72b15998cdac3fc7802";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
+  <!-- Back-redirect -->
+  <script>(function(){var link='https://desafiohexa.com/quiz';var urlBackRedirect=link.trim()+(link.indexOf('?')>0?'&':'?')+document.location.search.replace('?','').toString();history.pushState({},'',location.href);history.pushState({},'',location.href);history.pushState({},'',location.href);window.addEventListener('popstate',function(){setTimeout(function(){location.href=urlBackRedirect;},1);});})();</script>
+
+  <style>
+    /* ── DESIGN SYSTEM (espelha o index.html) ── */
+    :root {
+      --cream:          oklch(0.98 0.004 95);
+      --navy:           oklch(0.14 0.02 260);
+      --green:          oklch(0.62 0.22 148);
+      --green-deep:     oklch(0.40 0.16 148);
+      --green-shadow:   oklch(0.36 0.14 148);
+      --red:            oklch(0.58 0.24 25);
+      --red-deep:       oklch(0.38 0.18 25);
+      --yellow:         oklch(0.88 0.18 95);
+      --yellow-text:    oklch(0.86 0.22 130);
+      --yellow-deep:    oklch(0.72 0.16 95);
+      --font-display:   "Anton", "Bebas Neue", "Archivo Black", system-ui, sans-serif;
+      --font-condensed: "Barlow Condensed", "Oswald", system-ui, sans-serif;
+      --font-body:      "Inter", system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--navy);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER FIXO ── */
+    #quiz-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--navy);
+      border-bottom: 3px solid #000;
+    }
+
+    .header-inner {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 6px 16px;
+    }
+
+    .header-inner img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+
+    .progress-wrap {
+      height: 6px;
+      background: oklch(0.22 0.03 260);
+    }
+    #progress-bar {
+      height: 100%;
+      background: var(--green);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* ── CONTAINER ── */
+    #quiz-container {
+      max-width: 430px;
+      margin: 0 auto;
+      padding-top: 56px;
+      min-height: 100vh;
+    }
+
+    /* ── STEPS ── */
+    .step { display: none; }
+    .step.active {
+      display: block;
+      animation: stepIn 0.3s ease;
+    }
+
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SEÇÕES ── */
+    .section-cream { background: var(--cream); padding: 20px 16px 36px; }
+    .section-navy  { background: var(--navy);  padding: 20px 16px 36px; overflow-x: hidden; }
+    /* extra espaço nos steps com sticky CTA para o botão não cobrir conteúdo */
+    .has-sticky > div:first-child { padding-bottom: 90px !important; }
+
+    /* ── VÍDEOS — proporção natural, limitado a 72vh ── */
+    .video-wrap {
+      margin: 14px 0;
+      border-radius: 10px;
+      border: 3px solid #000;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.88);
+      overflow: hidden;
+      line-height: 0;
+    }
+    .video-wrap video {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 72vh;
+    }
+
+    .sound-toggle {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      line-height: 1;
+    }
+
+    /* ── TOAST DE PROVA SOCIAL ── */
+    #purchase-toast {
+      position: fixed;
+      top: 64px;
+      right: 10px;
+      left: auto;
+      transform: translateX(110%);
+      width: min(260px, calc(100vw - 90px));
+      background: var(--green);
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.88);
+      border-radius: 7px;
+      padding: 5px 8px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      z-index: 999;
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+    #purchase-toast.show {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .toast-icon {
+      width: 22px; height: 22px;
+      border-radius: 4px;
+      border: 1.5px solid rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    .toast-body { flex: 1; min-width: 0; }
+    .toast-name {
+      font-family: var(--font-condensed);
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .toast-msg {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.2;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .toast-time {
+      font-family: var(--font-body);
+      font-size: 9px;
+      color: rgba(255,255,255,0.65);
+      flex-shrink: 0;
+      align-self: center;
+      margin-left: 2px;
+    }
+
+    /* ── STEP 5: CALCULADORA ── */
+    .calc-section { background: #0d0d0d; padding: 20px 16px 36px; }
+
+    .calc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #111;
+      border: 0.5px solid #333;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-family: var(--font-condensed);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #EF9F27;
+      margin-bottom: 14px;
+    }
+
+    .calc-headline {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 6vw, 1.6rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .calc-sub {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: #888;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .calc-table {
+      background: #111;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 0.5px solid #1f1f1f;
+    }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row-label { font-family: var(--font-body); font-size: 11px; color: #666; }
+    .calc-row-val   { font-family: var(--font-body); font-size: 11px; color: #999; font-weight: 600; }
+    .calc-row.total .calc-row-label { color: #ef4444; font-weight: 700; font-size: 12px; }
+    .calc-row.total .calc-row-val   { color: #ef4444; font-weight: 800; font-size: 15px; }
+
+    .vs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .vs-card {
+      border-radius: 10px;
+      padding: 14px 12px;
+      border: 1px solid;
+    }
+    .vs-card.bad  { background: #1a0505; border-color: #7f1d1d; }
+    .vs-card.good { background: #052010; border-color: #14532d; }
+    .vs-card-label {
+      font-family: var(--font-condensed);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 6px;
+    }
+    .vs-card.bad  .vs-card-label { color: #f87171; }
+    .vs-card.good .vs-card-label { color: #4ade80; }
+    .vs-card-price {
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .vs-card.bad  .vs-card-price { color: #ef4444; }
+    .vs-card.good .vs-card-price { color: #22c55e; }
+    .vs-card-desc {
+      font-family: var(--font-body);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+    .vs-card.bad  .vs-card-desc { color: #7f1d1d; }
+    .vs-card.good .vs-card-desc { color: #166534; }
+
+    .economy-pill {
+      background: #052010;
+      border: 1px solid #14532d;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .economy-pill .ep-label {
+      font-family: var(--font-condensed);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #4ade80;
+      margin-bottom: 2px;
+    }
+    .economy-pill .ep-value {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: #22c55e;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .section-proof {
+      background: #16a34a;
+      border-radius: 10px;
+      padding: 11px 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      transition: opacity 0.4s ease;
+    }
+    .sp-avatar {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: #052010;
+      color: #4ade80;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-condensed);
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .sp-body { flex: 1; min-width: 0; }
+    .sp-name {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sp-msg {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #86efac;
+      margin-top: 1px;
+    }
+    .sp-time {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: #86efac;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+
+    .calc-cta-wrap { position: relative; }
+    .calc-cta-sub {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #86efac;
+      margin-top: 6px;
+    }
+
+    /* ── INFO CALLOUT ── */
+    .info-callout {
+      background: var(--navy);
+      border: 3px solid #000;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.88);
+      padding: 13px 14px;
+      margin-bottom: 10px;
+    }
+    .info-callout-header {
+      font-family: var(--font-condensed);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: oklch(0.62 0.03 260);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .info-callout-value {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .info-callout-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: oklch(0.65 0.03 260);
+      line-height: 1.5;
+    }
+    .info-callout-desc strong { color: rgba(255,255,255,0.85); }
+    .info-callout-vs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed oklch(0.30 0.03 260);
+    }
+    .vs-label {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: #fff;
+      background: var(--red);
+      border: 2px solid #000;
+      border-radius: 4px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .vs-text {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.82 0.03 260);
+      line-height: 1.4;
+    }
+    .vs-text strong {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    /* ── MINI ALERTA ── */
+    .mini-alert {
+      background: var(--navy);
+      border: 3px solid #000;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.88);
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .mini-alert-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-condensed);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+    .mini-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      animation: pulse-dot 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.75); }
+    }
+    .mini-alert-sub {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.72 0.03 260);
+      line-height: 1.4;
+    }
+    .mini-alert-sub strong { color: var(--yellow); font-weight: 700; }
+
+    /* ── RESPONSIVIDADE MOBILE ── */
+    @media (max-width: 430px) {
+      .section-cream, .section-navy { padding: 16px 14px 30px; }
+      .headline { font-size: clamp(1.4rem, 7vw, 2.1rem) !important; }
+      .subtext  { font-size: 14px; margin-bottom: 16px; }
+      .btn-cta  { font-size: 1rem; padding: 16px 20px; }
+      .badge    { font-size: 10px; }
+      .strip-card { width: 68px; height: 92px; }
+      .price-value { font-size: 44px; }
+      #countdown   { font-size: 44px; }
+      .faq-q       { font-size: 13px; }
+    }
+
+    /* ── BOTÃO CTA (estilo 3D do index.html) ── */
+    .btn-cta {
+      display: block;
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 18px 24px;
+      border-radius: 8px;
+      border: 3px solid #000;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.88), 0 18px 40px -12px rgba(0,0,0,0.35);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -70%;
+      width: 45%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      animation: shine 2.8s infinite;
+    }
+    @keyframes shine { to { left: 120%; } }
+    .btn-cta:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.88);
+    }
+
+    .btn-cta.btn-red {
+      background: var(--red);
+      box-shadow: 0 8px 0 rgba(0,0,0,0.88), 0 18px 40px -12px rgba(0,0,0,0.35);
+    }
+
+    /* ── BADGE / LABEL ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 4px;
+      border: 2px solid #000;
+      background: var(--yellow);
+      color: var(--navy);
+      padding: 5px 12px;
+      font-family: var(--font-condensed);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+    }
+    .badge.badge-white {
+      background: #fff;
+    }
+    .badge.badge-green {
+      background: var(--green);
+      color: #fff;
+      border-color: #000;
+    }
+    .badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── HEADLINE ── */
+    .headline {
+      font-family: var(--font-display);
+      color: var(--navy);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .headline.white { color: #fff; }
+    .headline.yellow { color: var(--yellow); }
+
+    /* ── SUBTEXT ── */
+    .subtext {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: oklch(0.45 0.03 260);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+    .subtext.white { color: oklch(0.82 0.03 260); }
+
+    /* ── CARD BASE ── */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      border: 3px solid #000;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.88);
+      overflow: hidden;
+    }
+    .card-offset {
+      background: #fff;
+      border-radius: 16px;
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.88);
+    }
+    .card-dashed {
+      background: #fff;
+      border-radius: 20px;
+      border: 3px dashed #000;
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.88);
+    }
+
+    /* ═══════════════════════════════════════
+       STEP 1 — Hook / Problema
+    ═══════════════════════════════════════ */
+    .price-pill {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-condensed);
+      font-size: 14px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 2px solid #000;
+    }
+
+    /* ═══════════════════════════════════════
+       STEP 2 — Solução / Cards de figurinha
+    ═══════════════════════════════════════ */
+    .figurinha-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .figurinha-card {
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .figurinha-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.07);
+    }
+    .figurinha-card:hover,
+    .figurinha-card.touch-active {
+      transform: translateY(-7px) scale(1.06);
+      box-shadow: 4px 11px 0 rgba(0,0,0,0.88), 0 0 22px oklch(0.62 0.22 148 / 0.6);
+    }
+    .figurinha-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      display: block;
+    }
+    .grid-caption {
+      text-align: center;
+      font-family: var(--font-condensed);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: oklch(0.82 0.03 260);
+      margin-bottom: 18px;
+    }
+
+    /* ── STRIP ANIMADO DE FIGURINHAS ── */
+    .strip-section {
+      overflow: hidden;
+      margin: 18px -16px 0;
+      padding: 14px 0;
+      background: var(--navy);
+    }
+    .strip-track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      animation: scroll-left 28s linear infinite;
+    }
+    .strip-track:hover { animation-play-state: paused; }
+    .strip-card {
+      width: 80px;
+      height: 108px;
+      border-radius: 6px;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .strip-card:hover {
+      transform: translateY(-8px) scale(1.12);
+      box-shadow: 3px 11px 0 rgba(0,0,0,0.8), 0 0 22px oklch(0.62 0.22 148 / 0.75);
+      z-index: 10;
+    }
+    .strip-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ═══════════════════════════════════════
+       STEP 3 — Prova Social (WhatsApp)
+    ═══════════════════════════════════════ */
+    .carousel-outer {
+      overflow: hidden;
+      border-radius: 10px;
+      border: 3px solid #000;
+      box-shadow: 5px 5px 0 rgba(0,0,0,0.88);
+      margin: 16px 0;
+    }
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.32s ease;
+    }
+    .wpp-card {
+      min-width: 100%;
+      height: 420px;
+      background: #111b21;
+      padding: 0;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .wpp-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: oklch(0.55 0.03 260);
+      border: 2px solid #000;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .dot.active {
+      background: var(--green);
+      transform: scale(1.25);
+    }
+
+    /* ═══════════════════════════════════════
+       STEP 4 — O que você recebe
+    ═══════════════════════════════════════ */
+    /* ── Step 4: hero item (produto principal) ── */
+    .items-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .item-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border-radius: 10px;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.88);
+      padding: 12px 14px;
+    }
+    .item-check { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .item-body { flex: 1; }
+    .item-title {
+      font-family: var(--font-condensed);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .item-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.45 0.03 260);
+      line-height: 1.4;
+    }
+    .bonus-tag {
+      display: inline-block;
+      margin-top: 7px;
+      background: var(--yellow);
+      color: var(--navy);
+      font-family: var(--font-condensed);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border-radius: 4px;
+      border: 2px solid #000;
+      padding: 2px 8px;
+    }
+
+    /* ═══════════════════════════════════════
+       STEP 5 — Garantia
+    ═══════════════════════════════════════ */
+    .guarantee-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 3px dashed #000;
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.88);
+      padding: 28px 24px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .guarantee-seal {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 4px solid var(--yellow);
+      box-shadow: 0 0 0 3px oklch(0.72 0.16 95), 4px 4px 0 rgba(0,0,0,0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .guarantee-seal::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1px solid oklch(0.88 0.18 95 / 0.3);
+    }
+    .seal-top    { font-family: var(--font-condensed); font-size: 9px; font-weight: 800; letter-spacing: 0.15em; color: var(--yellow); text-transform: uppercase; }
+    .seal-number { font-family: var(--font-display); font-size: 50px; color: var(--yellow); line-height: 1; }
+    .seal-unit   { font-family: var(--font-condensed); font-size: 12px; font-weight: 800; letter-spacing: 0.2em; color: var(--yellow); }
+    .seal-bottom { font-family: var(--font-condensed); font-size: 8px; font-weight: 700; letter-spacing: 0.08em; color: var(--yellow); text-transform: uppercase; margin-top: 2px; line-height: 1.4; }
+    .guarantee-text {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: oklch(0.42 0.03 260);
+      line-height: 1.7;
+    }
+    .guarantee-inline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: oklch(0.13 0.02 260);
+      border: 2px solid oklch(0.3 0.04 260);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 18px 0 4px;
+    }
+    .guarantee-inline .guarantee-seal {
+      width: 110px; height: 110px;
+      margin: 0;
+      flex-shrink: 0;
+      padding: 8px;
+    }
+    .guarantee-inline .guarantee-seal .seal-top    { font-size: 7px; }
+    .guarantee-inline .guarantee-seal .seal-number { font-size: 36px; }
+    .guarantee-inline .guarantee-seal .seal-unit   { font-size: 10px; }
+    .guarantee-inline .guarantee-seal .seal-bottom { font-size: 6.5px; }
+    .guarantee-inline-text {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.82 0.02 260);
+      line-height: 1.55;
+    }
+    .guarantee-inline-text strong { color: #fff; }
+
+    /* ═══════════════════════════════════════
+       STEP 5 — FAQ
+    ═══════════════════════════════════════ */
+    .faq-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0;
+      padding-bottom: 90px;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.88);
+      overflow: hidden;
+    }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 16px;
+      cursor: pointer;
+      user-select: none;
+      font-family: var(--font-condensed);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+    }
+    .faq-icon {
+      width: 26px; height: 26px;
+      border-radius: 4px;
+      border: 2px solid #000;
+      background: var(--yellow);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      font-weight: 900;
+      flex-shrink: 0;
+      transition: transform 0.28s ease, background 0.2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--navy);
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 16px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: oklch(0.42 0.03 260);
+      line-height: 1.65;
+      border-top: 2px dashed oklch(0.85 0.01 260);
+      padding-top: 12px;
+    }
+
+    /* Sticky CTA */
+    #sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px;
+      padding: 10px 16px 20px;
+      z-index: 150;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    #sticky-cta.visible { display: block; }
+    #sticky-cta.light { background: linear-gradient(to top, var(--cream) 60%, transparent); }
+    #sticky-cta.dark  { background: linear-gradient(to top, #0d0d0d 60%, transparent); }
+    #sticky-cta.navy  { background: linear-gradient(to top, var(--navy) 60%, transparent); }
+
+    /* ═══════════════════════════════════════
+       STEP 7 — Oferta final
+    ═══════════════════════════════════════ */
+    .price-card-wrap {
+      position: relative;
+      padding-top: 90px;
+      margin: 18px 0;
+    }
+    .figurinha-legend-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) rotate(-4deg);
+      width: 62%;
+      max-width: 220px;
+      z-index: 0;
+      border-radius: 14px;
+      filter: drop-shadow(0 8px 28px rgba(212,175,55,0.55));
+      pointer-events: none;
+      user-select: none;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 3px solid #000;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.88);
+      padding: 24px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .price-label {
+      font-family: var(--font-condensed);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .price-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .price-from {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.55 0.03 260);
+    }
+    .price-from del {
+      color: var(--red);
+      text-decoration: line-through;
+    }
+    .price-value {
+      font-family: var(--font-display);
+      font-size: 56px;
+      color: var(--green);
+      text-align: center;
+      line-height: 1;
+      margin: 8px 0 4px;
+    }
+    .price-install {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: oklch(0.55 0.03 260);
+      margin-bottom: 16px;
+    }
+    .price-divider {
+      height: 2px;
+      background: oklch(0.9 0.01 260);
+      border-radius: 2px;
+      margin: 14px 0;
+    }
+    .bonus-grid-title {
+      font-family: var(--font-condensed);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .bonus-cell {
+      background: var(--cream);
+      border-radius: 8px;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.7);
+      padding: 10px;
+      text-align: center;
+    }
+    .bonus-cell .b-num {
+      font-family: var(--font-condensed);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--green);
+      margin-bottom: 3px;
+    }
+    .bonus-cell .b-name {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    /* COUNTDOWN */
+    .countdown-wrap {
+      background: var(--red);
+      border-radius: 8px;
+      border: 3px solid #000;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.88);
+      padding: 14px;
+      text-align: center;
+      margin: 16px 0;
+    }
+    .countdown-label {
+      font-family: var(--font-condensed);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 6px;
+    }
+    #countdown {
+      font-family: var(--font-display);
+      font-size: 54px;
+      color: #fff;
+      letter-spacing: 6px;
+      line-height: 1;
+    }
+
+    /* TRUST ROW */
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-condensed);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: oklch(0.72 0.05 260);
+      padding: 4px 12px;
+    }
+    .trust-item + .trust-item {
+      border-left: 1px solid oklch(0.28 0.03 260);
+    }
+    .ticon { font-size: 15px; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER FIXO ═══ -->
+  <header id="quiz-header">
+    <div class="header-inner">
+      <img src="images/logo.png" alt="Figurinhas 2026">
+    </div>
+    <div class="progress-wrap">
+      <div id="progress-bar"></div>
+    </div>
+  </header>
+
+  <!-- ═══ CONTAINER PRINCIPAL ═══ -->
+  <main id="quiz-container">
+
+    <!-- ══════════════════════════════════════════
+         STEP 1 — Hook / Problema
+    ══════════════════════════════════════════ -->
+    <div class="step active" data-step="1">
+      <div class="section-cream">
+        <div>
+          <span class="badge"><span class="dot"></span>Copa do Mundo 2026</span>
+        </div>
+
+        <h1 class="headline" style="font-size:2.1rem;">
+          Complete seu Álbum<br>da Copa 2026<br>por Apenas R$24,90
+        </h1>
+
+        <div class="video-wrap" style="position:relative;">
+          <video id="vid1" src="images/hero.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <button class="sound-toggle" onclick="toggleSound('vid1','sb1')" id="sb1">🔇</button>
+        </div>
+
+        <p class="subtext" style="margin-top:16px;">
+          A maioria das pessoas gasta mais de
+          <span class="price-pill">R$ 700</span>
+          em pacotinhos e ainda não completa o álbum.
+          Existe um jeito muito mais inteligente.
+        </p>
+
+        <div class="mini-alert">
+          <div class="mini-alert-top">
+            <span class="mini-dot"></span>
+            Você já gastou em pacotinhos o suficiente.
+          </div>
+          <div class="mini-alert-sub">
+            Complete o álbum por <strong>R$24,90</strong> — sem surpresa, sem sorte.
+          </div>
+        </div>
+
+        <button class="btn-cta" onclick="goToStep(2)">
+          VER O PACK COMPLETO →
+        </button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STEP 2 — Solução / Produto
+    ══════════════════════════════════════════ -->
+    <div class="step has-sticky" data-step="2">
+      <div class="section-navy">
+        <div>
+          <span class="badge badge-green"><span class="dot"></span>A solução que está mudando o jogo</span>
+        </div>
+
+        <h2 class="headline white" style="font-size:1.9rem;">
+          TODAS AS FIGURINHAS 2026 PRONTAS PARA IMPRIMIR
+        </h2>
+
+        <p class="subtext white">
+          Receba instantaneamente um PDF completo com todas as figurinhas organizadas por seleção.
+          Imprima só as que faltam — sem envelopes, sem sorte, sem frustração.
+        </p>
+        <p class="subtext white" style="margin-top:10px; font-size:13px; opacity:0.85;">
+          🖨️ Inclui manual completo de impressão para o resultado ficar idêntico ao original.
+        </p>
+
+        <div class="video-wrap" style="position:relative;">
+          <video id="vid2" src="media/hero-video.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <button class="sound-toggle" onclick="toggleSound('vid2','sb2')" id="sb2">🔇</button>
+        </div>
+
+        <!-- Strip animado de figurinhas -->
+        <div class="strip-section">
+          <div class="strip-track">
+            <div class="strip-card"><img src="images/messi.webp" alt="Messi"></div>
+            <div class="strip-card"><img src="images/cristiano.webp" alt="Cristiano"></div>
+            <div class="strip-card"><img src="images/mbape.webp" alt="Mbappé"></div>
+            <div class="strip-card"><img src="images/vini.webp" alt="Vinicius"></div>
+            <div class="strip-card"><img src="images/raphinha.webp" alt="Raphinha"></div>
+            <div class="strip-card"><img src="images/yamal.webp" alt="Yamal"></div>
+            <div class="strip-card"><img src="images/kane%20oro.webp" alt="Kane"></div>
+            <div class="strip-card"><img src="images/messi-rbg_6p1Z.webp" alt="Messi"></div>
+            <!-- clone para loop seamless -->
+            <div class="strip-card"><img src="images/messi.webp" alt="Messi"></div>
+            <div class="strip-card"><img src="images/cristiano.webp" alt="Cristiano"></div>
+            <div class="strip-card"><img src="images/mbape.webp" alt="Mbappé"></div>
+            <div class="strip-card"><img src="images/vini.webp" alt="Vinicius"></div>
+            <div class="strip-card"><img src="images/raphinha.webp" alt="Raphinha"></div>
+            <div class="strip-card"><img src="images/yamal.webp" alt="Yamal"></div>
+            <div class="strip-card"><img src="images/kane%20oro.webp" alt="Kane"></div>
+            <div class="strip-card"><img src="images/messi-rbg_6p1Z.webp" alt="Messi"></div>
+          </div>
+        </div>
+
+        <p class="grid-caption" style="margin-top:14px;">+900 figurinhas • 48 seleções • Alta qualidade</p>
+
+        <button class="btn-cta" onclick="goToStep(3)">CONTINUAR →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STEP 3 — Prova Social
+    ══════════════════════════════════════════ -->
+    <div class="step" data-step="3">
+      <div class="section-cream">
+        <div>
+          <span class="badge badge-white">⭐ O que estão dizendo</span>
+        </div>
+
+        <h2 class="headline" style="font-size:1.9rem;">
+          CLIENTES SATISFEITOS
+        </h2>
+        <p class="subtext">Prints reais de quem já usou o pack:</p>
+
+        <div class="carousel-outer" id="carousel">
+          <div class="carousel-inner" id="carousel-inner">
+            <div class="wpp-card"><img src="images/depoimento-wpp1.png"                   alt="Depoimento 1" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-wpp2.png"                   alt="Depoimento 2" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-wpp3.png"                   alt="Depoimento 3" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-wpp4.png"                   alt="Depoimento 4" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-wpp5.jpeg"                  alt="Depoimento 5" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-wpp6.jfif"                  alt="Depoimento 6" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-carlos-C4--0Itr.webp"       alt="Depoimento Carlos" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-mariana-CRT3Etmq.webp"      alt="Depoimento Mariana" loading="lazy"></div>
+            <div class="wpp-card"><img src="images/depoimento-patricia-D_37NipZ.webp"     alt="Depoimento Patricia" loading="lazy"></div>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carousel-dots">
+          <div class="dot active" onclick="goToSlide(0)"></div>
+          <div class="dot" onclick="goToSlide(1)"></div>
+          <div class="dot" onclick="goToSlide(2)"></div>
+          <div class="dot" onclick="goToSlide(3)"></div>
+          <div class="dot" onclick="goToSlide(4)"></div>
+          <div class="dot" onclick="goToSlide(5)"></div>
+          <div class="dot" onclick="goToSlide(6)"></div>
+          <div class="dot" onclick="goToSlide(7)"></div>
+          <div class="dot" onclick="goToSlide(8)"></div>
+        </div>
+
+        <div style="margin-top:22px;">
+          <button class="btn-cta" onclick="goToStep(4)">CONTINUAR →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STEP 4 — Calculadora + Garantia
+    ══════════════════════════════════════════ -->
+    <div class="step has-sticky" data-step="4">
+      <div class="calc-section">
+
+        <div><span class="calc-tag">🧮 A conta real do álbum oficial</span></div>
+
+        <h2 class="calc-headline">Completar na banca custaria<br>R$ 5.000+</h2>
+
+        <p class="calc-sub">São +980 figurinhas no álbum oficial. Cada pacote custa ~R$7 e vem com repetidas — você gastaria tudo isso na banca e ainda ficaria faltando jogador.</p>
+
+        <div class="calc-table">
+          <div class="calc-row">
+            <span class="calc-row-label">Figurinhas no álbum</span>
+            <span class="calc-row-val">+980</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">Pacotes necessários (c/ repetidas)</span>
+            <span class="calc-row-val">~500</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">Preço médio por pacote</span>
+            <span class="calc-row-val">R$ 7,00</span>
+          </div>
+          <div class="calc-row total">
+            <span class="calc-row-label">Total estimado</span>
+            <span class="calc-row-val">R$ 5.000+</span>
+          </div>
+        </div>
+
+        <div class="vs-grid">
+          <div class="vs-card bad">
+            <div class="vs-card-label">BANCA</div>
+            <div class="vs-card-price">R$ 5.000+</div>
+            <div class="vs-card-desc">e ainda fica faltando jogador</div>
+          </div>
+          <div class="vs-card good">
+            <div class="vs-card-label">ESSE PACK</div>
+            <div class="vs-card-price">R$ 24,90</div>
+            <div class="vs-card-desc">álbum completo garantido</div>
+          </div>
+        </div>
+
+        <div class="economy-pill">
+          <div class="ep-label">VOCÊ ECONOMIZA ATÉ</div>
+          <div class="ep-value">R$ 4.980,10</div>
+        </div>
+
+        <!-- Garantia inline -->
+        <div class="guarantee-inline">
+          <div class="guarantee-seal" style="flex-shrink:0;">
+            <div class="seal-top">SATISFAÇÃO<br>GARANTIDA</div>
+            <div class="seal-number">30</div>
+            <div class="seal-unit">DIAS</div>
+            <div class="seal-bottom">OU SEU<br>DINHEIRO<br>DE VOLTA</div>
+          </div>
+          <p class="guarantee-inline-text">
+            Fique tranquilo, você pode testar à vontade. Se não ficar satisfeito em até <strong>30 dias</strong>, devolvemos <strong>100% do seu dinheiro</strong> — sem perguntas, sem burocracia.
+          </p>
+        </div>
+
+        <div class="calc-cta-wrap">
+          <button class="btn-cta" onclick="goToStep(5)">
+            CONTINUAR →
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STEP 5 — FAQ
+    ══════════════════════════════════════════ -->
+    <div class="step" data-step="5">
+      <div class="section-navy">
+        <div>
+          <span class="badge"><span class="dot"></span>Tire suas dúvidas</span>
+        </div>
+
+        <h2 class="headline white" style="font-size:1.9rem;">
+          PERGUNTAS FREQUENTES
+        </h2>
+
+        <div class="faq-stack">
+
+          <div class="faq-item" data-faq="0">
+            <div class="faq-q" onclick="toggleFaq(0)">
+              <span>Como recebo o PDF?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Após a confirmação do pagamento (instantânea), você recebe o link de download por e-mail
+                e também direto na tela. O acesso é imediato.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq="1">
+            <div class="faq-q" onclick="toggleFaq(1)">
+              <span>Preciso de impressora especial?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Não. Qualquer impressora jato de tinta ou laser funciona.
+                Você também pode imprimir em gráficas pelo celular.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq="2">
+            <div class="faq-q" onclick="toggleFaq(2)">
+              <span>Posso imprimir quantas vezes quiser?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim! O arquivo é seu para sempre. Imprima uma vez, dez vezes,
+                ou mande para uma gráfica — sem limite.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq="3">
+            <div class="faq-q" onclick="toggleFaq(3)">
+              <span>Funciona no celular?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim. Você recebe o link, abre o PDF no celular e já pode mandar imprimir ou visualizar na tela.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq="4">
+            <div class="faq-q" onclick="toggleFaq(4)">
+              <span>O acesso é vitalício?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim. Uma compra, acesso para sempre. Inclui todas as atualizações sem custo adicional.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq="5">
+            <div class="faq-q" onclick="toggleFaq(5)">
+              <span>Como faço para recortar as figurinhas?</span>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                O tutorial bônus ensina o método exato. Mas é simples: tesoura ou guilhotina de papel. Fica perfeito.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky CTA -->
+        <div id="sticky-cta">
+          <button class="btn-cta" id="sticky-cta-btn">CONTINUAR →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STEP 6 — Oferta / Checkout
+    ══════════════════════════════════════════ -->
+    <div class="step has-sticky" data-step="6">
+      <div class="section-navy">
+
+        <div style="text-align:center;">
+          <span class="badge"><span class="dot"></span>Figurinhas Copa do Mundo 2026</span>
+        </div>
+
+        <h2 class="headline yellow" style="font-size:2rem; text-align:center;">
+          FECHE O ÁLBUM SEM ESVAZIAR O BOLSO
+        </h2>
+
+        <!-- Card de preço -->
+        <div class="price-card-wrap">
+          <img src="images/cardgold.png" alt="" class="figurinha-legend-bg" aria-hidden="true">
+          <div class="price-card">
+          <div class="price-label">FIGURINHAS COPA DO MUNDO 2026</div>
+          <div class="price-title">PACK COMPLETO DE FIGURINHAS</div>
+          <div class="price-from">De <del>R$ 89,90</del> por apenas</div>
+          <div class="price-value">R$ 24,90</div>
+          <div class="price-install">ou 3x de R$ 8,30</div>
+
+          <div class="price-divider"></div>
+
+          <div class="bonus-grid-title">🎁 4 BÔNUS ESPECIAIS INCLUÍDOS</div>
+          <div class="bonus-grid">
+            <div class="bonus-cell">
+              <div class="b-num">BÔNUS 1</div>
+              <div class="b-name">Álbum em PDF para imprimir</div>
+            </div>
+            <div class="bonus-cell">
+              <div class="b-num">BÔNUS 2</div>
+              <div class="b-name">Figurinhas Metalizadas</div>
+            </div>
+            <div class="bonus-cell">
+              <div class="b-num">BÔNUS 3</div>
+              <div class="b-name">Envelope das figurinhas em PDF</div>
+            </div>
+            <div class="bonus-cell">
+              <div class="b-num">BÔNUS 4</div>
+              <div class="b-name">Tutorial de impressão idêntico ao original</div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-wrap">
+          <div class="countdown-label">⏱ OFERTA EXPIRA EM:</div>
+          <div id="countdown">10:00</div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <button class="btn-cta" style="font-size:1.25rem; padding:20px 24px;"
+          onclick="window.open('https://ggcheckout.app/checkout/v4/jaTV0Q1MXSdGe0MT6a9j', '_blank')">
+          COMPRAR E COMPLETAR MEU ÁLBUM
+        </button>
+
+        <!-- Trust Icons -->
+        <div class="trust-row">
+          <div class="trust-item"><span class="ticon">🔒</span> Pagamento seguro</div>
+          <div class="trust-item"><span class="ticon">⚡</span> Acesso imediato</div>
+          <div class="trust-item"><span class="ticon">🛡️</span> Garantia 30 dias</div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast de prova social -->
+  <div id="purchase-toast">
+    <div class="toast-icon">✅</div>
+    <div class="toast-body">
+      <div class="toast-name" id="toast-name">Thiago Ferreira</div>
+      <div class="toast-msg" id="toast-msg">acabou de baixar o pack completo</div>
+    </div>
+    <div class="toast-time" id="toast-time">agora</div>
+  </div>
+
+  <script>
+    // ─── ESTADO ──────────────────────────────────────
+    let currentStep  = 1;
+    let currentSlide = 0;
+    let countdownStarted = false;
+    const TOTAL_STEPS = 6;
+
+    // ─── NAVEGAÇÃO ───────────────────────────────────
+    function goToStep(n) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.querySelector(`.step[data-step="${n}"]`).classList.add('active');
+      currentStep = n;
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Sticky CTA dinâmico
+      const stickyEl  = document.getElementById('sticky-cta');
+      const stickyBtn = document.getElementById('sticky-cta-btn');
+      const stickyMap = {
+        2: { text: 'CONTINUAR →',           bg: 'navy',  fn: () => goToStep(3) },
+        4: { text: 'CONTINUAR →',           bg: 'dark',  fn: () => goToStep(5) },
+        5: { text: 'QUERO BAIXAR AGORA →',  bg: 'navy',  fn: () => goToStep(6) },
+        6: { text: 'COMPRAR MEU ÁLBUM →',   bg: 'navy',  fn: () => window.open('https://ggcheckout.app/checkout/v4/jaTV0Q1MXSdGe0MT6a9j','_blank') },
+      };
+      stickyEl.classList.remove('visible','light','dark','navy');
+      if (stickyMap[n]) {
+        const cfg = stickyMap[n];
+        stickyBtn.textContent = cfg.text;
+        stickyBtn.onclick     = cfg.fn;
+        stickyEl.classList.add(cfg.bg);
+        setTimeout(() => stickyEl.classList.add('visible'), 300);
+      }
+
+      // Retoma vídeos do step ativo (pausados pelo display:none)
+      document.querySelector(`.step[data-step="${n}"]`).querySelectorAll('video').forEach(v => {
+        v.play().catch(() => {});
+      });
+
+      if (n === 6 && !countdownStarted) {
+        startCountdown(600);
+        countdownStarted = true;
+      }
+    }
+
+    function updateProgress() {
+      const pct = ((currentStep - 1) / (TOTAL_STEPS - 1)) * 100;
+      document.getElementById('progress-bar').style.width = pct + '%';
+    }
+
+    // ─── CARROSSEL ───────────────────────────────────
+    const TOTAL_SLIDES = 9;
+
+    function goToSlide(i) {
+      currentSlide = Math.max(0, Math.min(i, TOTAL_SLIDES - 1));
+      const w = document.getElementById('carousel').offsetWidth;
+      document.getElementById('carousel-inner').style.transform = `translateX(${-currentSlide * w}px)`;
+      document.querySelectorAll('#carousel-dots .dot').forEach((d, idx) =>
+        d.classList.toggle('active', idx === currentSlide));
+    }
+
+    let tsX = 0;
+    const carouselEl = document.getElementById('carousel');
+    carouselEl.addEventListener('touchstart', e => { tsX = e.changedTouches[0].screenX; }, { passive: true });
+    carouselEl.addEventListener('touchend', e => {
+      const diff = tsX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 35) {
+        if (diff > 0) goToSlide(currentSlide + 1);
+        if (diff < 0) goToSlide(currentSlide - 1);
+      }
+    }, { passive: true });
+
+    setInterval(() => { if (currentStep === 3) goToSlide((currentSlide + 1) % TOTAL_SLIDES); }, 4500);
+
+    // ─── FAQ ─────────────────────────────────────────
+    function toggleFaq(idx) {
+      document.querySelectorAll('.faq-item').forEach((item, i) => {
+        const ans   = item.querySelector('.faq-answer');
+        const inner = item.querySelector('.faq-answer-inner');
+        if (i === idx) {
+          const open = item.classList.contains('open');
+          item.classList.toggle('open', !open);
+          ans.style.maxHeight = open ? '0' : inner.scrollHeight + 'px';
+        } else {
+          item.classList.remove('open');
+          item.querySelector('.faq-answer').style.maxHeight = '0';
+        }
+      });
+    }
+
+    // ─── COUNTDOWN ───────────────────────────────────
+    function startCountdown(sec) {
+      let t = sec;
+      const el = document.getElementById('countdown');
+      setInterval(() => {
+        if (t <= 0) t = 600; /* reset to 10:00 */
+        t--;
+        el.textContent = `${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+      }, 1000);
+    }
+
+    // ─── TOUCH GLOW NAS FIGURINHAS ───────────────────
+    document.querySelectorAll('.figurinha-card').forEach(c => {
+      c.addEventListener('touchstart', () => c.classList.add('touch-active'), { passive: true });
+      c.addEventListener('touchend',   () => setTimeout(() => c.classList.remove('touch-active'), 400), { passive: true });
+    });
+
+    // ─── BALÃO INLINE (Step 5) ───────────────────────
+    const spPeople = [
+      { initials:'LG', name:'Lucas G. — São Paulo' },
+      { initials:'FM', name:'Fernanda M. — Curitiba' },
+      { initials:'RS', name:'Rafael S. — BH' },
+      { initials:'AC', name:'Amanda C. — Fortaleza' },
+      { initials:'BT', name:'Bruno T. — Porto Alegre' },
+      { initials:'JR', name:'Juliana R. — Recife' },
+      { initials:'TN', name:'Thiago N. — Goiânia' },
+      { initials:'CF', name:'Camila F. — Manaus' },
+    ];
+    const spMsgs = [
+      'já está imprimindo as figurinhas',
+      'acabou de completar o álbum',
+      'baixou o pack agora mesmo',
+      'está colando as figurinhas',
+    ];
+    let spIdx = 0;
+    function rotateSectionProof() {
+      const proof = document.getElementById('section-proof');
+      if (!proof) return;
+      proof.style.opacity = '0';
+      setTimeout(() => {
+        spIdx = Math.floor(Math.random() * spPeople.length);
+        const p = spPeople[spIdx];
+        document.getElementById('sp-avatar').textContent = p.initials;
+        document.getElementById('sp-name').textContent   = p.name;
+        document.getElementById('sp-msg').textContent    = spMsgs[Math.floor(Math.random() * spMsgs.length)];
+        document.getElementById('sp-time').textContent   = `há ${2 + Math.floor(Math.random() * 7)} min`;
+        proof.style.opacity = '1';
+      }, 400);
+    }
+    setInterval(rotateSectionProof, 30000);
+
+    // ─── TOAST DE PROVA SOCIAL ───────────────────────
+    const toastNames = [
+      'Thiago Ferreira','Ana Lima','Carlos Souza','Mariana Costa',
+      'Pedro Alves','Juliana Rocha','Rafael Mendes','Camila Oliveira',
+      'Lucas Gomes','Beatriz Santos','Diego Martins','Fernanda Cruz',
+      'Rodrigo Neves','Patrícia Dias','Gabriel Lopes','Larissa Freitas'
+    ];
+    const toastMessages = [
+      'acabou de baixar o pack completo',
+      'completou o álbum agora mesmo',
+      'acabou de receber todas as figurinhas',
+      'já está imprimindo as figurinhas',
+      'adquiriu o pack há pouco tempo',
+      'completou o álbum da Copa 2026'
+    ];
+    const toastTimes = ['agora','há 1 min','há 2 min','há 3 min'];
+
+    function showPurchaseToast() {
+      if ([1, 2, 6].includes(currentStep)) return;
+      const toast = document.getElementById('purchase-toast');
+      document.getElementById('toast-name').textContent =
+        toastNames[Math.floor(Math.random() * toastNames.length)];
+      document.getElementById('toast-msg').textContent =
+        toastMessages[Math.floor(Math.random() * toastMessages.length)];
+      document.getElementById('toast-time').textContent =
+        toastTimes[Math.floor(Math.random() * toastTimes.length)];
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    setTimeout(function loop() {
+      showPurchaseToast();
+      setTimeout(loop, 14000 + Math.random() * 6000);
+    }, 4000);
+
+
+    // ─── SOM DOS VÍDEOS ──────────────────────────────
+    function toggleSound(vidId, btnId) {
+      const v = document.getElementById(vidId);
+      const b = document.getElementById(btnId);
+      v.muted = !v.muted;
+      b.textContent = v.muted ? '🔇' : '🔊';
+    }
+
+    // ─── INIT ─────────────────────────────────────────
+    updateProgress();
+    // Garante que o vídeo do Step 1 carrega e reproduz mesmo após troca de arquivo
+    const vid1 = document.getElementById('vid1');
+    if (vid1) { vid1.load(); vid1.play().catch(() => {}); }
+  </script>
+
+</body>
+</html>
